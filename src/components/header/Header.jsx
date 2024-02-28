@@ -19,6 +19,11 @@ function Header() {
       active: !authStatus,
     },
     {
+      name: "Signup",
+      slug: "/signup",
+      active: !authStatus,
+    },
+    {
       name: "All Posts",
       slug: "/all-posts",
       active: authStatus,
@@ -30,7 +35,7 @@ function Header() {
     },
   ];
   return (
-    <header className="py-3 bg-gray-400 shadow">
+    <header className="py-3 bg-blue-800/10 shadow">
       <Container>
         <nav className="flex items-center justify-between">
           <div className="mr-4">
@@ -44,7 +49,7 @@ function Header() {
                 <li key={item.name}>
                   <button
                     onClick={() => navigate(item.slug)}
-                    className="px-6 py-2 duration-200 hover:bg-red-500 rounded-full"
+                    className="inline-block px-6 py-2 duration-200 hover:bg-red-500 rounded-full"
                   >
                     {item.name}
                   </button>
@@ -53,7 +58,7 @@ function Header() {
             )}
             {authStatus && (
               <li>
-                <logoutBtn />
+                <LogoutBtn />
               </li>
             )}
           </ul>
