@@ -21,7 +21,6 @@ export class AuthService {
         name
       );
       if (userAccount) {
-        //call another function to create a user
         return this.login({ email, password });
       } else {
         return userAccount;
@@ -35,6 +34,7 @@ export class AuthService {
     try {
       return await this.account.createEmailSession(email, password);
     } catch (error) {
+      console.log(error);
       throw error;
     }
   }
